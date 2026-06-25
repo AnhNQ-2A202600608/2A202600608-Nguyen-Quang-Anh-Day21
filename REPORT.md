@@ -5,7 +5,7 @@
 * **Môn học**: AICB Phase 2 Track 3 — Chương 5 — Fine-tuning & An Toàn
 * **Lớp**: VinUniversity AI Club 20k
 * **Ngày thực hiện**: 2026-06-25
-* **Hình thức nộp bài**: Option B (GitHub + HuggingFace Hub - các đường dẫn thực tế được cập nhật đầy đủ trong file [LINKS.md](file:///d:/code/VinAi%20Action/day21/2A202600608-Nguyen-Quang-Anh-Day21/LINKS.md))
+* **Hình thức nộp bài**: Option B (GitHub + HuggingFace Hub - các đường dẫn thực tế được cập nhật đầy đủ trong file [LINKS.md](LINKS.md))
 
 ---
 
@@ -69,7 +69,7 @@ Thực nghiệm sử dụng tập dữ liệu **`5CD-AI/Vietnamese-alpaca-gpt4-g
         *   Phân vị 50% ($p50$): $127$ tokens.
         *   Phân vị 95% ($p95$): $277$ tokens.
         *   Phân vị 99% ($p99$): $497$ tokens.
-    *   *Lựa chọn Max Sequence Length*: Để đảm bảo bao phủ trên 99% chiều dài của dữ liệu huấn luyện mà không gây lãng phí bộ nhớ GPU cho các chuỗi đệm (padding) quá dài, tham số `max_seq_length` được thiết lập bằng cách làm tròn lên lũy thừa của 2 gần nhất của $p95$, tương ứng với **`max_seq_length = 512`** (dưới ngưỡng giới hạn cứng 1024 của profile T4). Biểu đồ phân phối chi tiết được kết xuất tại [token_length_distribution.png](file:///d:/code/VinAi%20Action/day21/2A202600608-Nguyen-Quang-Anh-Day21/results/token_length_distribution.png).
+    *   *Lựa chọn Max Sequence Length*: Để đảm bảo bao phủ trên 99% chiều dài của dữ liệu huấn luyện mà không gây lãng phí bộ nhớ GPU cho các chuỗi đệm (padding) quá dài, tham số `max_seq_length` được thiết lập bằng cách làm tròn lên lũy thừa của 2 gần nhất của $p95$, tương ứng với **`max_seq_length = 512`** (dưới ngưỡng giới hạn cứng 1024 của profile T4). Biểu đồ phân phối chi tiết được kết xuất tại [token_length_distribution.png](results/token_length_distribution.png).
 4.  **Phân chia tập dữ liệu**: Thực hiện phân chia ngẫu nhiên tỉ lệ **90% train (180 mẫu) / 10% eval (20 mẫu)** để phục vụ đánh giá độc lập sau huấn luyện.
 
 ---
@@ -99,7 +99,7 @@ Thực nghiệm sử dụng tập dữ liệu **`5CD-AI/Vietnamese-alpaca-gpt4-g
 
 > [!IMPORTANT]
 > **Cam kết tính trung thực học thuật (Academic Honesty)**: 
-> Toàn bộ số liệu của cấu hình $r=8$, $r=16$ (Baseline - Q+V), và $r=64$ dưới đây được trích xuất và tái tạo chính xác từ lịch sử lưu trữ (cached logs) của lượt chạy mẫu thành công trên Colab có sẵn trong file gốc của bài Lab. Số liệu cho thực nghiệm **16 (All Layers)** là số liệu dự báo thực tế dựa trên đặc tính phân bổ tham số của kiến trúc Qwen. Người học đã cấu hình đầy đủ code huấn luyện nâng cấp trong notebook [notebook.ipynb](file:///d:/code/VinAi%20Action/day21/2A202600608-Nguyen-Quang-Anh-Day21/notebook.ipynb) để sẵn sàng tự chạy lại kiểm chứng.
+> Toàn bộ số liệu của cấu hình $r=8$, $r=16$ (Baseline - Q+V), và $r=64$ dưới đây được trích xuất và tái tạo chính xác từ lịch sử lưu trữ (cached logs) của lượt chạy mẫu thành công trên Colab có sẵn trong file gốc của bài Lab. Số liệu cho thực nghiệm **16 (All Layers)** là số liệu dự báo thực tế dựa trên đặc tính phân bổ tham số của kiến trúc Qwen. Người học đã cấu hình đầy đủ code huấn luyện nâng cấp trong notebook [notebook.ipynb](notebook.ipynb) để sẵn sàng tự chạy lại kiểm chứng.
 
 ### 5.1. Bảng số liệu thực nghiệm so sánh đa chiều:
 
@@ -131,7 +131,7 @@ Thực nghiệm sử dụng tập dữ liệu **`5CD-AI/Vietnamese-alpaca-gpt4-g
 ---
 
 ## 6. Đồ thị Loss Curve
-Đồ thị biểu diễn sự suy giảm của Loss trong quá trình huấn luyện của cấu hình Baseline $r=16$ được trích xuất trực tiếp tại [loss_curve.png](file:///d:/code/VinAi%20Action/day21/2A202600608-Nguyen-Quang-Anh-Day21/results/loss_curve.png).
+Đồ thị biểu diễn sự suy giảm của Loss trong quá trình huấn luyện của cấu hình Baseline $r=16$ được trích xuất trực tiếp tại [loss_curve.png](results/loss_curve.png).
 
 *   **Phân tích xu hướng hội tụ**:
     *   Trong 5-10 steps đầu tiên, Training Loss bắt đầu ở mức cao (~$1.96$) và giảm rất nhanh. Đây là giai đoạn Warmup của tốc độ học và mô hình đang nhanh chóng thích ứng với cấu trúc định dạng hội thoại mới (Alpaca template).
@@ -169,8 +169,8 @@ Thực nghiệm sử dụng tập dữ liệu **`5CD-AI/Vietnamese-alpaca-gpt4-g
 ---
 
 ## 9. Các tính năng nâng cao đã triển khai trong Notebook
-Nhằm đạt được các mục tiêu điểm thưởng (Bonus) và mở rộng kỹ năng thực tiễn, file notebook [notebook.ipynb](file:///d:/code/VinAi%20Action/day21/2A202600608-Nguyen-Quang-Anh-Day21/notebook.ipynb) đã được nâng cấp các tính năng sau:
+Nhằm đạt được các mục tiêu điểm thưởng (Bonus) và mở rộng kỹ năng thực tiễn, file notebook [notebook.ipynb](notebook.ipynb) đã được nâng cấp các tính năng sau:
 1.  **Hỗ trợ Target All Layers**: Hàm wrap LoRA được tái thiết kế để nhận danh sách module đích linh hoạt, giúp chạy thực nghiệm Target All Layers chỉ bằng cách thay đổi cấu hình đầu vào.
-2.  **Tự động kết xuất đồ thị**: Hàm vẽ loss curve được tích hợp sẵn lệnh `plt.savefig()` để tự động lưu đồ thị huấn luyện ra thư mục [results/](file:///d:/code/VinAi%20Action/day21/2A202600608-Nguyen-Quang-Anh-Day21/results).
+2.  **Tự động kết xuất đồ thị**: Hàm vẽ loss curve được tích hợp sẵn lệnh `plt.savefig()` để tự động lưu đồ thị huấn luyện ra thư mục [results/](results).
 3.  **HuggingFace Hub login an toàn**: Sử dụng thư viện `huggingface_hub.login()` kết hợp với Google Colab Secrets (`userdata.get('HF_TOKEN')`) để bảo vệ thông tin cá nhân của người học, không hardcode token vào code.
 4.  **Tích hợp GGUF Merge & Export**: Bổ sung các mã nguồn hướng dẫn sử dụng thư viện Unsloth để thực hiện ghép ma trận (merge) và xuất mô hình sang định dạng lượng tử hóa `.gguf` (định dạng `q4_k_m`) để sẵn sàng phục vụ triển khai cục bộ trên CPU/thiết bị cấu hình yếu.
