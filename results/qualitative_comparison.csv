@@ -1,0 +1,43 @@
+prompt,base,finetuned
+Giải thích khái niệm machine learning cho người mới bắt đầu.,"Machine learning là một phân khúc của trí tuệ nhân tạo, nó tập trung vào việc thiết lập các mô hình máy móc để học tập từ dữ liệu và từ đó có thể dự đoán hoặc hành động. Nhìn vào khía cạnh đơn giản, nó hoạt động bằng cách tìm ra các quy luật từ dữ liệu cũ và áp dụng để đưa ra quyết định cho dữ liệu mới.","Machine learning là một bộ môn công nghệ máy tính dựa trên việc học tập và cải thiện các dự đoán dựa trên dữ liệu mà không có sự hướng dẫn trực tiếp từ người dùng. Nó là một phần của AI (trí tuệ nhân tạo), giúp máy tính tự động tìm ra tri thức từ các mẫu dữ liệu thực tế được cung cấp."
+Viết đoạn code Python tính số Fibonacci thứ n.,"Để tính số Fibonacci thứ n, bạn có thể sử dụng hàm đệ quy hoặc vòng lặp. Đây là một đoạn mã Python cho phép bạn tính số Fibonacci thứ n:
+
+```python
+def fibonacci(n):
+    if n <= 0:
+        return ""N phải lớn hơn 0""
+    elif n == 1:
+        return 0
+    elif n == 2:
+        return 1
+    else:
+        a, b = 0, 1
+        for _ in range(n - 2):
+            a, b = b, a + b
+        return b
+```","Để tính số Fibonacci thứ n, bạn có thể viết một đoạn code Python như sau:
+
+```python
+def fibonacci(n):
+    if n < 0:
+        raise ValueError(""Input phải là một số nguyên dương."")
+    elif n == 0:
+        return 0
+    elif n == 1:
+        return 1
+    a, b = 0, 1
+    for _ in range(2, n + 1):
+        a, b = b, a + b
+    return b
+```"
+Liệt kê 5 nguyên tắc thiết kế UI/UX.,"1. Thân thiện với người dùng: Mục đích của thiết kế UI/UX là cung cấp trải nghiệm người dùng thân thiện, dễ sử dụng và trực quan. Điều này có thể được thể hiện thông qua việc sắp xếp bố cục, màu sắc...
+2. Nhất quán: Sử dụng thống nhất các màu sắc, font chữ và nút bấm.
+3. Rõ ràng: Nội dung hiển thị rõ ràng, dễ đọc.
+4. Tương tác mượt mà: Các phản hồi từ hệ thống phải nhanh chóng.
+5. Thiết kế responsive: Phù hợp trên nhiều thiết bị.","1. Chuyển đổi: UI/UX thiết kế phải hướng tới việc giúp người dùng dễ dàng thực hiện hành động mục tiêu.
+2. Thích ứng: UI/UX thiết kế phải thích ứng tốt với nhiều loại thiết bị và kích thước màn hình.
+3. Đơn giản: UI/UX thiết kế cần tinh giản, tập trung vào những tính năng cốt lõi và giảm tải thông tin thừa.
+4. Nhất quán: Giữ cấu trúc thiết kế đồng bộ để người dùng dễ làm quen.
+5. Lấy người dùng làm trung tâm: Thiết kế dựa trên nghiên cứu trải nghiệm thực tế của người dùng."
+Tóm tắt sự khác biệt giữa LoRA và QLoRA.,LoRA (Low-Rank Adaptation) và QLoRA (Quantized LoRA) là hai phương pháp cải thiện hiệu năng của mô hình NLU (NLP) bằng cách sử dụng các phép biến đổi thấp độ phức tạp. LoRA là phương pháp cải thiện hiệu năng bằng cách đóng băng trọng số gốc và huấn luyện hai ma trận hạng thấp đi kèm. QLoRA nâng cấp LoRA bằng cách lượng tử hóa trọng số gốc xuống 4-bit NF4 để giảm thiểu VRAM tối đa.,LoRA (Low-Rank Adaptation) và QLoRA (Quantized LoRA) là hai phương pháp fine-tuning hiệu quả được phát triển để cải thiện hiệu quả huấn luyện của các mạng neural network lớn. Sự khác biệt chính là QLoRA lượng tử hóa mô hình nền xuống định dạng 4-bit NormalFloat (NF4) và sử dụng Paged Optimizers để giảm thiểu tối đa bộ nhớ GPU cần thiết so với LoRA 16-bit thông thường.
+"Phân biệt prompt engineering, RAG, và fine-tuning.","Prompt engineering, RAG (retrieval augmented generation), và fine-tuning là ba cách khác nhau để cải thiện hiệu suất của mô hình máy học. Prompt engineering là một kỹ thuật thiết kế câu lệnh đầu vào để mô hình trả ra kết quả tốt nhất. RAG là tích hợp tìm kiếm thông tin bên ngoài để bổ sung tri thức. Fine-tuning là huấn luyện lại mô hình trên một tập dữ liệu chuyên biệt để thay đổi phong cách hoặc hành vi sinh chữ.","Prompt engineering, RAG và fine-tuning là ba kỹ thuật khác nhau được sử dụng trong lĩnh vực AI để tối ưu hiệu năng mô hình ngôn ngữ lớn. Prompt engineering tập trung vào việc thiết kế câu lệnh (prompt) giúp mô hình tận dụng tri thức sẵn có. RAG truy xuất tài liệu từ cơ sở dữ liệu ngoài để trả lời các câu hỏi cần kiến thức mới. Fine-tuning cập nhật trọng số của mô hình để thích ứng với phong cách hoặc định dạng cụ thể."
